@@ -119,15 +119,17 @@ function draw() {
 
 //function reset when ball does notcame in the contact of padde
 function reset() {
-  pcscore = 0;
   playerscore = 0;
   ball.x = width / 2 + 100,
     ball.y = height / 2 + 100;
   ball.dx = 3;
   ball.dy = 3;
-  loop()
+  
 }
-
+ function restart(){
+  pcscore = 0;
+  loop()
+ }
 
 //function midline draw a line in center
 function midline() {
@@ -172,7 +174,6 @@ function move() {
     else {
       missedsound.play()
       pcscore++;
-      drawScore
       reset();
       navigator.vibrate(100);
     }
